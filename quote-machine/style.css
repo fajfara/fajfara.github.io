@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background: beige;
+}
+h1{
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 60px;
+}
+
+.container {
+    position: relative;
+    top: 300px;
+    text-align: center;
+}
+
+#button{
+    width: 200px;
+}
+
+#btnTwit{
+    width: 200px;
+}
+
+#startAnim{
+    width: 200px;
+}
+
+#stopAnim{
+    width: 200px;
+}
+.topBtns{
+    text-align: center;
+    width: 410px;
+    margin: 0 auto;
+}
+.botBtns{
+    position: relative;
+    top: 20px;
+    text-align: center;
+    width: 410px;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container h1{
+        font-size: 45px;
+    }
+
+    #quote-block{
+        font-size: 15px;
+    }
+
+    #quoted-man{
+        font-size: 15px;
+        margin: 30px auto 30px auto;
+    }
+}

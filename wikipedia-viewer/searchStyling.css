@@ -1,0 +1,13 @@
+/* Change the color for focus input field */
+.input-field input[type=text]:focus + label {
+    color: #45cafc;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #45cafc;
+    box-shadow: 0 1px 0 0 #45cafc;
+}
+
+.input-field .prefix.active {
+    color: #303f9f;
+}
