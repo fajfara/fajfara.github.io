@@ -1,0 +1,22 @@
+{
+  "name": "twitch-app",
+  "version": "1.0.0",
+  "description": "The twitch app for the FCC challenge",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/mains.scss css/main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fajfara/twitch-app-FCC.git"
+  },
+  "author": "Anze Fajfar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fajfara/twitch-app-FCC/issues"
+  },
+  "homepage": "https://github.com/fajfara/twitch-app-FCC#readme",
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  }
+}
