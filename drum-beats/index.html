@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drum beats</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="start-overlay" id="overlay">
+        <h1 class="effect01">Welcome to drum beats</h1>
+
+    </div>
+    <div class="drum-container hide" id="drum-container">
+        <div id="disable-click">
+
+        </div>
+        <div id="drum-overlay" class="hide">
+            <div class="drum-overlay__text">
+                <h1>Welcome to Drum beats!</h1>
+                <p>
+                    <span class="drum-overlay__text--instructions-title">
+                        Instructions:
+                    </span>
+                    <ul>
+                        <li>First the computer plays a sequence</li>
+                        <li>After the computer plays his solo, you copy him!</li>
+                        <li>Press the same drums that computer did</li>
+                        <li>You have 3 trys before you lose</li>
+                    </ul>
+                    <span class="drum-overlay__text--ready-text">
+                        You ready?! <br>
+                        Press the Start button bellow to start, good luck!
+                    </span>
+                </p>
+            </div>
+        </div>
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:#F7B239;}
+            .st1{fill:none;stroke:#343434;stroke-width:13;stroke-miterlimit:10;}
+            .st2{fill:#F95428;}
+            .st3{fill:#FFFFFF;}
+            .st4{fill:#3A88D6;}
+            .st5{fill:#F2F2F2;}
+            .st6{fill:#333333;}
+        </style>
+        <g name="1" id="snare-drum" class="pointer" onmouseover="sizeUp(this)" onmouseout="sizeDown(this)">
+            <path id="snare-fill" class="st0" d="M321,166.7v18.9l-32.9,4.7l5.6,38.9c-15.3-5.9-31.9-9.1-49.2-9.1s-33.9,3.2-49.2,9.1l5.6-38.9
+                l-32.9-4.7v-18.9H321z"/>
+            <path id="snare-rim" class="st1" d="M316.3,260h-143c-3.9,0-7-3.1-7-7v-81.7c0-3.9,3.1-7,7-7h143c3.9,0,7,3.1,7,7V253
+                C323.3,256.9,320.2,260,316.3,260z"/>
+        </g>
+        <g name="2" id="left-tom" class="pointer" onmouseover="sizeUp(this)" onmouseout="sizeDown(this)" >
+            <polygon id="left-tom-fill_1_" class="st2" points="73.6,172.1 73.6,252 43.3,247.6 54.5,169.4 	"/>
+            <path id="left-tom-fill" class="st2" d="M200.9,190.4l-5.6,38.9c-19,7.3-36,18.6-49.9,33L73.6,252v-79.9l94.4,13.6L200.9,190.4z"/>
+            <path id="left-tom-shadow" class="st3" d="M166.5,219c-0.5,0-0.9,0-1.4-0.1l-64.2-10.3c-4.7-0.8-7.9-5.2-7.1-9.9s5.2-7.9,9.9-7.1
+                l64.2,10.3c4.7,0.8,7.9,5.2,7.1,9.9C174.3,216,170.7,219,166.5,219z"/>
+            <path id="left-tom-rim" class="st1" d="M182.6,268.6L43.1,245.1c-1.7-0.3-2.8-1.7-2.5-3.1l15.6-74.1c0.3-1.4,1.9-2.4,3.6-2.1
+                l139.6,23.5c1.7,0.3,2.8,1.7,2.5,3.1l-15.6,74.1C185.9,268,184.3,268.9,182.6,268.6z"/>
+        </g>
+        <g name="3" id="right-tom" class="pointer" onmouseover="sizeUp(this)" onmouseout="sizeDown(this)">
+            <polygon id="right-tom-fill" class="st2" points="434.5,169.4 445.8,247.6 415.4,252 415.4,172.1 	"/>
+            <path id="right-tom-fill_1_" class="st2" d="M415.4,172.1V252l-71.8,10.3c-13.9-14.4-30.9-25.7-49.9-33l-5.6-38.9l32.9-4.7
+                L415.4,172.1z"/>
+            <path id="right-tom-rim" class="st1" d="M443.8,244.7L304.4,269c-1.7,0.3-3.2-0.6-3.4-2.1l-10-75.1c-0.2-1.5,1-2.9,2.7-3.2
+                l139.4-24.3c1.7-0.3,3.2,0.6,3.4,2.1l10,75.1C446.7,243,445.5,244.4,443.8,244.7z"/>
+            <path id="right-tom-shadow_1_" class="st3" d="M320.2,219c-2.3,0-4.5-0.9-6.1-2.5c-0.4-0.4-0.8-0.8-1.1-1.3c-0.3-0.5-0.6-1-0.8-1.5
+                c-0.2-0.5-0.4-1.1-0.5-1.6c-0.1-0.6-0.2-1.1-0.2-1.7s0.1-1.1,0.2-1.7c0.1-0.5,0.3-1.1,0.5-1.6s0.5-1,0.8-1.5s0.7-0.9,1.1-1.3
+                c1.6-1.6,3.8-2.5,6.1-2.5s4.5,0.9,6.1,2.5c0.4,0.4,0.8,0.8,1.1,1.3c0.3,0.5,0.6,1,0.8,1.5c0.2,0.5,0.4,1.1,0.5,1.6
+                c0.1,0.6,0.2,1.1,0.2,1.7s-0.1,1.1-0.2,1.7c-0.1,0.5-0.3,1.1-0.5,1.6s-0.5,1-0.8,1.5s-0.7,0.9-1.1,1.3
+                C324.7,218.1,322.5,219,320.2,219z"/>
+            <path id="right-tom-shadow" class="st3" d="M347.4,214.7c-4.1,0-7.8-3-8.5-7.2c-0.8-4.7,2.4-9.1,7.1-9.9l37-6
+                c4.7-0.8,9.1,2.4,9.9,7.1c0.8,4.7-2.4,9.1-7.1,9.9l-37,6C348.3,214.6,347.9,214.7,347.4,214.7z"/>
+        </g>
+        <g name="4" id="kick-drum" class="pointer" onmouseover="sizeUp(this)" onmouseout="sizeDown(this)">
+            <path id="blue-kick-drum-rim" class="st4" d="M343.6,262.3c24,24.8,38.7,58.5,38.7,95.7c0,76.1-61.7,137.7-137.7,137.7
+                S106.8,434.1,106.8,358c0-37.2,14.7-70.9,38.7-95.7c13.9-14.4,30.9-25.7,49.9-33c15.3-5.9,31.9-9.1,49.2-9.1s33.9,3.2,49.2,9.1
+                C312.7,236.6,329.7,248,343.6,262.3z M351.3,358c0-59-47.8-106.8-106.8-106.8S137.8,299.1,137.8,358c0,59,47.8,106.8,106.8,106.8
+                S351.3,417,351.3,358z"/>
+            <path id="kick-drum-part" class="st5" d="M244.5,251.3c59,0,106.8,47.8,106.8,106.8s-47.8,106.8-106.8,106.8S137.8,417,137.8,358
+                C137.8,299.1,185.6,251.3,244.5,251.3z"/>
+            <path id="kick-drum-shadow" class="st3" d="M182,410.6c-2.7,0-5.4-1.3-7-3.7c-10.1-14.4-15.5-31.3-15.5-48.9
+                c0-46.9,38.2-85.1,85.1-85.1c11.2,0,22.1,2.2,32.4,6.4c4.4,1.8,6.5,6.8,4.7,11.2s-6.8,6.5-11.2,4.7c-8.2-3.4-16.9-5.1-25.9-5.1
+                c-37.4,0-67.9,30.4-67.9,67.9c0,14.1,4.3,27.5,12.3,39c2.7,3.9,1.8,9.3-2.1,12C185.4,410.1,183.7,410.6,182,410.6z"/>
+            <path id="inner-white-kick-drum" class="st6" d="M244.5,242.7c-63.6,0-115.4,51.7-115.4,115.4s51.7,115.4,115.4,115.4
+                S359.9,421.6,359.9,358S308.1,242.7,244.5,242.7z M244.5,456.2c-54.1,0-98.2-44-98.2-98.2s44-98.1,98.1-98.1s98.2,44,98.2,98.1
+                C342.7,412.1,298.6,456.2,244.5,456.2z"/>
+            <path id="outer-kick-drum" class="st6" d="M244.7,210.4c-81.1,0-147.1,65.8-147.1,146.9s65.9,146.9,147.1,146.9
+                s147.1-66.1,147.1-147S325.8,210.4,244.7,210.4z M244.7,482.2c-69,0-125.2-56-125.2-125s56.1-124.9,125.1-124.9
+                s125.2,56,125.2,124.9C369.9,426,313.7,482.2,244.7,482.2z"/>
+        </g>
+        <g name="5" id="right-cymbal_1_" class="pointer" onmouseover="sizeUp(this)" onmouseout="sizeDown(this)">
+            <path id="right-cymbal-stand" class="st6" d="M424,52.1c0,0,0.2-8.7-8.6-8.7c-8.6,0-8.6,8.6-8.6,8.6l-0.2,391.5l-44.8,44.8
+                c0,0-8,6.1-2.1,12.7c6.5,7.3,13.2,0.6,13.2,0.6l33.6-33.6l0,28.1c0,0,0,7.9,8.3,8.4c8.2,0.4,8.9-8.4,8.9-8.4l0-28.1l31.6,31.6
+                c0,0,8.2,9.2,14.4,2.6c7.3-7.8-1.8-14.4-1.8-14.4l-44-44.2l-0.1-316.7l13.3,0c0,0,8.6-0.9,8.4-8.6c-0.3-8.3-8.3-8.6-8.3-8.6
+                l-13.3,0V52.1z"/>
+            <path id="right-cymbal" class="st0" d="M503.4,86.1h-176c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6h176c4.8,0,8.6,3.9,8.6,8.6
+                S508.1,86.1,503.4,86.1z"/>
+        </g>
+        <g name="6" id="left-cymbal" class="pointer" onmouseover="sizeUp(this)" onmouseout="sizeDown(this)">
+            <!-- Top part of left cymbal, the black thingy -->
+            <path id="left-top-cymbal" class="st6" d="M82.2,45.2v-29c0-4.8-3.9-8.6-8.6-8.6S65,11.5,65,16.3v29L82.2,45.2z"/>
+            <!-- The actual cymbal -->
+            <path id="left-cymbal-top-one" class="st0" d="M138.7,55.5H8.6c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6h130.1
+                c4.8,0,8.6,3.9,8.6,8.6S143.4,55.5,138.7,55.5z"/>
+            <path id="left-cymbal-bottom-one" class="st0" d="M138.7,86.1H8.6c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6h130.1
+                c4.8,0,8.6,3.9,8.6,8.6S143.4,86.1,138.7,86.1z"/>
+             <!-- The cymbal stand -->
+            <path id="left-cymbal-stand" class="st6" d="M65.1,162.4V179v263.9l-46.4,46.9c0,0-5.8,6.2,0.2,12c5.8,5.6,12.2,0,12.2,0l34.1-34.2
+                L65,495.7c0,0-0.5,8.4,8.8,8.6c8.2,0.1,8.4-8.2,8.4-8.2v-28.3l33.7,33.7c0,0,7.1,6.8,13-0.3c5.2-6.3-0.5-11.6-0.5-11.6l-47-46.1
+                l0.9-358.1H65.1v24.1H51.4c0,0-8,0.3-8,8.1c0,8,7.8,9.1,7.8,9.1h13.9V162.4z"/>
+        </g>
+        </svg>
+
+        <a href="#" class="btn red disable-click" id="start-button">Start the game</a>
+        
+
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
