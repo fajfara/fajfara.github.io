@@ -1,10 +1,13 @@
 // Variables main
 let userSeq = [];
-let simonSeq = [4];
-let count = 1;
+let simonSeq = [1];
+let playedID = [];
 let on;
 let off;
 let j = 0;
+let count= 1;
+let playing = true;
+let drumNumber;
 const introSeq = [2,3,5];
 
 // Selecting DOM elements
@@ -13,13 +16,15 @@ const leftTom = document.getElementById('left-tom');
 const rightTom = document.getElementById('right-tom');
 const kickDrum = document.getElementById('kick-drum');
 const rightCymbal = document.getElementById('right-cymbal');
-const leftCymbal = document.getElementById('left-cymbal-top-one');
-const leftCymbalTop = document.getElementById('left-top-cymbal');
+const leftCymbalTop = document.getElementById('left-cymbal-top-one');
+const leftCymbalBottom = document.getElementById('left-cymbal-bottom-one');
+const leftCymbal = document.getElementById('left-top-cymbal');
 const overlay = document.getElementById('overlay');
 const drumContainer = document.getElementById('drum-container');
 const startButton = document.getElementById('start-button');
 const drumOverlay = document.getElementById('drum-overlay');
 const disableClick = document.getElementById('disable-click');
+const score = document.getElementById('score');
 
 // audio variables
 const snareDrumAudio = new Audio('./drum-sounds/snare.wav');
@@ -30,13 +35,17 @@ const rightCymbalAudio = new Audio('./drum-sounds/cymbal.wav');
 const leftCymbalAudio = new Audio('./drum-sounds/closed-cymbal.wav');
 const buttonPushed = new Audio('./drum-sounds/button-push.wav');
 
+// selecting the hitbox DOM elements
+const hitboxSnare = document.getElementById("hitbox-snare");
+const hitboxLeftTom = document.getElementById("hitbox-left-tom");
+const hitboxRightTom = document.getElementById("hitbox-right-tom");
+const hitboxKickDrum = document.getElementById("hitbox-kick-drum");
+const hitboxRightCymbal = document.getElementById("hitbox-right-cymbal");
+const hitboxLeftCymbal = document.getElementById("hitbox-left-cymbal");
+
 window.onload = function() {
     // At the start don't show the transparent div that is used to prevent user clicking the drums while the sequence is playing
     disableClick.classList.add("show");
-    // Get random numbers for now mainly used for testing
-    //simonSeq[0] = Math.ceil((Math.random() * 6));
-    // Log used for testing
-    console.log(simonSeq);
     // Call the function which draws the start screen
     startScreen();
     // Intro drum sequence
@@ -48,14 +57,24 @@ window.onload = function() {
     startButton.addEventListener("click", function(){
         // Play the sound effect for the button pushed
         buttonPushed.play();
+        
+        for(var i = 0; i < 100; i++){
+            simonSeq[i] = Math.ceil((Math.random() * 6));
+        }
+        console.log(simonSeq);
+
         // Remove the overlay with instructions etc.
         setTimeout(() => {
             drumOverlay.classList.remove("show");
             drumOverlay.classList.add("fade-out");
             setTimeout(() => {
                 drumOverlay.classList.add("hide");
+                score.classList.remove("hide");
+                score.classList.add("show");
+                score.classList.add("fade-in");
             }, 900);
         }, 500);
+
         // Remove the start button and show the transparent div that prevents user clicks
         setTimeout(() => {
             startButton.classList.add("fade-out");
@@ -64,8 +83,12 @@ window.onload = function() {
             }, 900);
             
         }, 500);
-        // Start playing the sequence
-        startGame();
+        startSequence();
+        
+        userPlays();
+
+
+
         // For debugging only
         console.log(count, j);
     })
@@ -74,11 +97,6 @@ window.onload = function() {
 
 
 };
-
-// Starting the game
-function startGame() {
-    startSequence();
-}
 
 // Function made for playing the intro drum sequence, tried to do badum tss, eh close enough :)
 function introSequence(){
@@ -153,8 +171,8 @@ function playAudio(source) {
 
 // Going through the sequence
 function startSequence() {
-    //Reset count
-    count = simonSeq.length;
+    console.log("Inside of start sequence");
+
     // set interval length
     if(count <= 10){
         off = 800;
@@ -171,7 +189,7 @@ function startSequence() {
             console.log("Inside of snare drum");
             
             playAudio(snareDrumAudio);
-
+            playedID.push(1);
             setTimeout(function() {
                 snareDrum.classList.remove("animate--beat");
             }, off);
@@ -180,6 +198,7 @@ function startSequence() {
             leftTom.classList.add("animate--beat");
             console.log("Inside of left tom drum");
             playAudio(leftTomAudio);
+            playedID.push(2);
             setTimeout(function() {
                 leftTom.classList.remove("animate--beat");
             }, off);
@@ -188,6 +207,7 @@ function startSequence() {
             rightTom.classList.add("animate--beat");
             console.log("Inside of right tom drum");
             playAudio(rightTomAudio);
+            playedID.push(3);
             setTimeout(function() {
                 rightTom.classList.remove("animate--beat");
             }, off);
@@ -196,6 +216,7 @@ function startSequence() {
             kickDrum.classList.add("animate--beat");
             console.log("Inside of kick drum");
             playAudio(kickDrumAudio);
+            playedID.push(4);
             setTimeout(function() {
                 kickDrum.classList.remove("animate--beat");
             }, off);
@@ -204,6 +225,7 @@ function startSequence() {
             rightCymbal.classList.add("cymbal-shake");
             console.log("Inside of open cymbal");
             playAudio(rightCymbalAudio);
+            playedID.push(5);
             setTimeout(function() {
                 rightCymbal.classList.remove("cymbal-shake");
             }, off);
@@ -213,6 +235,7 @@ function startSequence() {
             leftCymbalTop.classList.add("move-cymbal-down");
             console.log("Inside of closed cymbal");
             playAudio(leftCymbalAudio);
+            playedID.push(6);
             setTimeout(function() {
                 leftCymbal.classList.remove("move-cymbal-down");
                 leftCymbalTop.classList.remove("move-cymbal-down");
@@ -222,10 +245,8 @@ function startSequence() {
         // debugging
         console.log("This is the: " + j + "nth time throught the interval");
         // Check if at the end of the array and reset j
-        if(j == count){
+        if(j >= count){
             clearInterval(x);
-            j = 0;
-            
             disableClick.classList.remove("show");
             disableClick.classList.add("hide");
         }
@@ -233,18 +254,176 @@ function startSequence() {
     }, on);
 }
 
-function sizeUp(x){
-    var test = x;
-    var numberOfDrum = parseInt(x.attributes[0].value);
-    simonSeq.push(numberOfDrum);
-    console.log(simonSeq);
+// function that checks for user input
+function userPlays(){
 
-    x.classList.remove("normalize-scale");
-    x.classList.remove("scale-up");
-    x.classList.add("scale-up");
+    // Check if the hitbox was clicked
+    hitboxSnare.addEventListener("click", function(){
+        // Push the id to the userSeq array
+        userSeq.push(1);
+        // Playing the audio for the drum
+        playAudio(snareDrumAudio);
+        // Add animation class
+        snareDrum.classList.add("animate--beat");
+        // setTimeout removes the animation class after .8 seconds
+        setTimeout(function() {
+            snareDrum.classList.remove("animate--beat");
+        }, 800);
+        // run the check function
+        checking();
+    });
+
+    hitboxLeftTom.addEventListener("click", function(){
+        userSeq.push(2);
+        playAudio(leftTomAudio);
+        leftTom.classList.add("animate--beat");
+        setTimeout(function() {
+            leftTom.classList.remove("animate--beat");
+        }, 800);
+        checking();
+    });
+
+    hitboxRightTom.addEventListener("click", function(){
+        userSeq.push(3);
+        playAudio(rightTomAudio);
+        rightTom.classList.add("animate--beat");
+        setTimeout(function() {
+            rightTom.classList.remove("animate--beat");
+        }, 800);
+        checking();
+    });
+
+    hitboxKickDrum.addEventListener("click", function(){
+        userSeq.push(4);
+        playAudio(kickDrumAudio);
+        kickDrum.classList.add("animate--beat");
+        setTimeout(function() {
+            kickDrum.classList.remove("animate--beat");
+        }, 800);
+        checking();
+    });
+
+    hitboxRightCymbal.addEventListener("click", function(){
+        userSeq.push(5);
+        playAudio(rightCymbalAudio);
+        rightCymbal.classList.add("animate--beat");
+        setTimeout(function() {
+            rightCymbal.classList.remove("animate--beat");
+        }, 800);
+        checking();
+    });
+
+    hitboxLeftCymbal.addEventListener("click", function(){
+        userSeq.push(6);
+        playAudio(leftCymbalAudio);
+        leftCymbal.classList.add("move-cymbal-down");
+        leftCymbalTop.classList.add("move-cymbal-down");
+        setTimeout(function() {
+            leftCymbal.classList.remove("move-cymbal-down");
+            leftCymbalTop.classList.remove("move-cymbal-down");
+        }, 800);
+        checking();
+    });
+
+}
+
+function checking(){
+    // Check if the length of the playedID and user clicked (userSeq) is the same.
+    if(playedID.length === userSeq.length){
+        // Check if playedID and user clicked ID are the same
+        if(playedID.join() === userSeq.join()){
+            // Play next round
+            setTimeout(function(){
+                // Display and update the score
+                score.innerText = "Score: " + count;
+                count++;
+                // reset both arrays
+                playedID = [];
+                userSeq = [];
+                j = 0;
+                simonSeq.push(drumNumber);
+                startSequence();
+
+            });
+        }
+
+    }
+}
+
+
+
+
+
+// Animation functions when hovering the drums
+function sizeUp(x){
+    checkDrum(x.attributes.name.nodeValue);
 }
 
 function sizeDown(x){
-    x.classList.remove("scale-up");
-    x.classList.add("normalize-scale");
+    normalizeDrum(x.attributes.name.nodeValue);
+}
+
+function checkDrum(drum){
+    if(drum === 'snare'){
+        snareDrum.classList.remove('normalize-scale');
+        snareDrum.classList.remove('scale-up');
+        snareDrum.classList.add('scale-up'); 
+    } else if(drum === 'left-tom'){
+        leftTom.classList.remove('normalize-scale');
+        leftTom.classList.remove('scale-up');
+        leftTom.classList.add('scale-up'); 
+    } else if(drum === 'right-tom'){
+        rightTom.classList.remove('normalize-scale');
+        rightTom.classList.remove('scale-up');
+        rightTom.classList.add('scale-up'); 
+    } else if(drum === 'kick-drum'){
+        kickDrum.classList.remove('normalize-scale');
+        kickDrum.classList.remove('scale-up');
+        kickDrum.classList.add('scale-up'); 
+    } else if(drum === 'right-cymbal'){
+        rightCymbal.classList.add("cymbal-shake");
+        setTimeout(function() {
+            rightCymbal.classList.remove("cymbal-shake");
+        }, 800);
+    } else if(drum === 'left-cymbal'){
+        leftCymbal.classList.add("move-cymbal-down");
+        leftCymbalTop.classList.add("move-cymbal-down");
+        setTimeout(function() {
+            leftCymbal.classList.remove("move-cymbal-down");
+            leftCymbalTop.classList.remove("move-cymbal-down");
+        }, 800);
+    }
+}
+
+function normalizeDrum(drum){
+    if(drum === 'snare'){
+        snareDrum.classList.remove('normalize-scale');
+        snareDrum.classList.remove('scale-up');
+        snareDrum.classList.add('normalize-scale'); 
+    } else if(drum === 'left-tom'){
+        leftTom.classList.remove('normalize-scale');
+        leftTom.classList.remove('scale-up');
+        leftTom.classList.add('normalize-scale'); 
+    } else if(drum === 'right-tom'){
+        rightTom.classList.remove('normalize-scale');
+        rightTom.classList.remove('scale-up');
+        rightTom.classList.add('normalize-scale'); 
+    } else if(drum === 'kick-drum'){
+        kickDrum.classList.remove('normalize-scale');
+        kickDrum.classList.remove('scale-up');
+        kickDrum.classList.add('normalize-scale'); 
+    } else if(drum === 'right-cymbal'){
+        rightCymbal.classList.add("cymbal-shake");
+        setTimeout(function() {
+            rightCymbal.classList.remove("cymbal-shake");
+        }, 800);
+    } else if(drum === 'left-cymbal'){ 
+        leftCymbal.classList.add("move-cymbal-down");
+        leftCymbalTop.classList.add("move-cymbal-down");
+        
+        setTimeout(function() {
+            leftCymbal.classList.remove("move-cymbal-down");
+            leftCymbalTop.classList.remove("move-cymbal-down");
+        }, 800);
+    }
 }
