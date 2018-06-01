@@ -1,0 +1,34 @@
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    display: inline-block;
+    position: relative;
+    left: -1.2rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: $beige;
+    font-size: 2rem;
+    font-family: $main-font;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 10001;
+    
+    &:active{
+        transform: translate(0px, 5px);
+        -webkit-transform: translate(0px, 5px);
+        box-shadow: 0px 1px 0px 0px;
+    }
+
+}
+
+
+.red{
+    background-color: $carmine;
+    box-shadow: 0px 5px 0px 0px #8b2d28;
+    
+
+    &:hover {
+        background-color: #FF6656;
+    }
+}
+ 

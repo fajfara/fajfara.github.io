@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,700');
+@import "reset";
+// Variables
+$main-font: 'IBM Plex Sans', sans-serif;
+$brown: #330808;
+$beige: #f1fba6;
+$orange-dark: #ff841f; 
+$orange-light: #ffd162;
+$orange-red: #e50000;
+
+//New jazzy colors
+$white: #fff;
+$safron: rgba(248, 162, 43, 1);
+$safron-dark: rgb(192, 127, 36);
+$mortuum: rgba(78, 34, 33, 1);
+$carmine: rgb(237, 53, 43);
+$black: rgba(35, 31, 32, 1);
+$ruddy: rgba(189, 90, 42, 1);
+$ruddy-light: rgb(207, 131, 93);
+
+
+// Default size setting
+html {
+    font-size: 70%;
+}
+
+body {
+    background-color: $safron-dark;
+    height: 100%;
+}
+
+// import all scss
+@import "buttons";
+@import "drum";
+@import "animations";
+@import "utilities";
+@import "overlay";
+@import "score";

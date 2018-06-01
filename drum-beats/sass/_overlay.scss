@@ -1,0 +1,62 @@
+.start-overlay {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: $ruddy-light;
+    animation: fade-out 2s;
+
+    & h1 {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $main-font;
+        font-weight: 700;
+        font-size: 4.5rem;
+        color: $white;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+        line-height: 7rem;
+    }
+}
+
+.effect01{
+    text-shadow:
+    0px 1px 0px #ffffff,
+    0px 2px 0px #c5c5c5,
+    0px 3px 0px #919191,
+    0px 4px 0px #5a5a5a,
+    0px 5px 10px rgba($black, 0.6);
+}
+
+.fail-screen{
+    width: 30rem;
+    background-color: $safron;
+    padding: 4rem;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 100000;
+    text-align: center;
+
+    & h1{
+        font-family: $main-font;
+        font-weight: 700;
+        font-size: 2rem;
+        color: $beige;
+        margin-bottom: 1rem;
+    }
+
+    & span {
+        font-family: $main-font;
+        font-size: 2rem;
+        color: $beige;
+    }
+
+    &__buttons{
+        width: 90%;
+        display: block;
+        margin-left: 2.1rem; 
+    }
+
+}
