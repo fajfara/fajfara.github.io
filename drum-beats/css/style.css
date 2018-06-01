@@ -157,7 +157,7 @@ body {
 
 #disable-click {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   z-index: 10000;
   position: absolute;
   top: 0;
@@ -309,6 +309,30 @@ body {
 
 .effect01 {
   text-shadow: 0px 1px 0px #ffffff, 0px 2px 0px #c5c5c5, 0px 3px 0px #919191, 0px 4px 0px #5a5a5a, 0px 5px 10px rgba(35, 31, 32, 0.6); }
+
+.fail-screen {
+  width: 30rem;
+  background-color: #f8a22b;
+  padding: 4rem;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  z-index: 100000;
+  text-align: center; }
+  .fail-screen h1 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #f1fba6;
+    margin-bottom: 1rem; }
+  .fail-screen span {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 2rem;
+    color: #f1fba6; }
+  .fail-screen__buttons {
+    width: 90%;
+    display: block;
+    margin-left: 2.1rem; }
 
 #score {
   padding: 1rem;

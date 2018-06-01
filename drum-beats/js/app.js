@@ -6,6 +6,7 @@ let on;
 let off;
 let j = 0;
 let count= 1;
+let userClickNum = -1;
 let playing = true;
 let drumNumber;
 const introSeq = [2,3,5];
@@ -25,6 +26,9 @@ const startButton = document.getElementById('start-button');
 const drumOverlay = document.getElementById('drum-overlay');
 const disableClick = document.getElementById('disable-click');
 const score = document.getElementById('score');
+const failScreen = document.getElementById('fail-screen');
+const tryAgainbutton = document.getElementById('try-again-button');
+const quitButton = document.getElementById('quit-button');
 
 // audio variables
 const snareDrumAudio = new Audio('./drum-sounds/snare.wav');
@@ -44,14 +48,8 @@ const hitboxRightCymbal = document.getElementById("hitbox-right-cymbal");
 const hitboxLeftCymbal = document.getElementById("hitbox-left-cymbal");
 
 window.onload = function() {
-    // At the start don't show the transparent div that is used to prevent user clicking the drums while the sequence is playing
-    disableClick.classList.add("show");
-    // Call the function which draws the start screen
-    startScreen();
-    // Intro drum sequence
-    setTimeout(() => {
-        introSequence();
-    }, 2200);
+    
+    loadingScreen();
 
     // This is after the user clicks start button
     startButton.addEventListener("click", function(){
@@ -79,6 +77,7 @@ window.onload = function() {
         setTimeout(() => {
             startButton.classList.add("fade-out");
             setTimeout(() => {
+                startButton.classList.remove("show");
                 startButton.classList.add("hide");
             }, 900);
             
@@ -106,7 +105,7 @@ function introSequence(){
     var index = 0;
 
     // Animating the drum set
-    a = setInterval(function() {
+    var a = setInterval(function() {
         if(introSeq[index] == 2){
             leftTom.classList.add("animate--beat");
             playAudio(leftTomAudio);
@@ -130,7 +129,7 @@ function introSequence(){
         }
         index++;
         // When it gets to the end of the array clear interval, enable the start button and show overlay
-        if(index == introSeq.length){
+        if(index === introSeq.length){
             clearInterval(a);
             startButton.classList.remove("disable-click");
             startButton.classList.add("enable-click");
@@ -145,6 +144,16 @@ function introSequence(){
     }, onIntro)
 }
 
+function loadingScreen(){
+    // At the start don't show the transparent div that is used to prevent user clicking the drums while the sequence is playing
+    disableClick.classList.add("show");
+    // Call the function which draws the start screen
+    startScreen();
+    // Intro drum sequence
+    setTimeout(() => {
+        introSequence();
+    }, 2200);
+}
 
 // Show the whole drum container 
 function startScreen() {
@@ -171,8 +180,9 @@ function playAudio(source) {
 
 // Going through the sequence
 function startSequence() {
-    console.log("Inside of start sequence");
-
+    console.log("Inside of start sequence, simonseq: " + simonSeq);
+    disableClick.classList.remove("hide");
+    disableClick.classList.add("show");
     // set interval length
     if(count <= 10){
         off = 800;
@@ -244,11 +254,14 @@ function startSequence() {
         j++;
         // debugging
         console.log("This is the: " + j + "nth time throught the interval");
+        console.log("PlayedID: " + playedID);
         // Check if at the end of the array and reset j
         if(j >= count){
             clearInterval(x);
-            disableClick.classList.remove("show");
-            disableClick.classList.add("hide");
+            setTimeout(() => {
+                disableClick.classList.remove("show");
+                disableClick.classList.add("hide");
+            }, 1000);
         }
 
     }, on);
@@ -327,7 +340,104 @@ function userPlays(){
 
 }
 
+// Checking the user input if it matches the one played by the computer
 function checking(){
+    disableClick.classList.remove("hide");
+    disableClick.classList.add("show");
+    userClickNum++;
+    if(userSeq.length == playedID.length){
+
+            if(userSeq.join() == playedID.join()){
+
+                if(count === 100){
+
+                    alert("you win");
+
+                } else {
+                    console.log("Inside of the first if statement, inside of else. Vars are: " + 
+                        "User clicked time is: " + userClickNum + " " + 
+                        "Played id are: " + playedID + 
+                        "user clicked drums are: " + userSeq +
+                        "Count is: " + count +
+                        "j is: " + j
+                    );
+                    score.innerText = "Score: " + count;
+                    count++;
+                    playedID = [];
+                    userSeq = [];
+                    j = 0;
+                    userClickNum = -1;
+                    startSequence();
+                    return;
+                }
+            } else {
+                console.log("Inside of the else first fail statement. Vars are:  " +
+                    "User clicked time is: " + userClickNum + " " + 
+                    "Played id are: " + playedID + 
+                    "user clicked drums are: " + userSeq +
+                    "Count is: " + count +
+                    "j is: " + j
+                )
+                disableClick.classList.remove("show");
+                disableClick.classList.add("hide");
+
+                playedID = [];
+                userSeq = [];
+                j = 0;
+                userClickNum = -1;
+
+
+                setTimeout(() => {
+                    failScreen.classList.add('fade-in');
+                    failScreen.classList.remove('hide');
+                    failScreen.classList.add('show');
+                    buttonsFailEnable();
+                }, 500);
+            }
+
+    } else if(userSeq[userClickNum] == playedID[userClickNum]){
+        console.log("Inside of the second else if statement. Vars are: " + 
+            "User clicked time is: " + userClickNum + " " + 
+            "Played id are: " + playedID + 
+            "user clicked drums are: " + userSeq +
+            "Count is: " + count +
+            "j is: " + j
+        )
+        if(userClickNum == playedID.length - 1){
+            userClickNum = -1;
+        }
+        setTimeout(() => {
+            disableClick.classList.remove("show");
+            disableClick.classList.add("hide");
+        }, 1000);
+        return;
+
+    } else {
+        console.log("Inside of the else for fail statement. Vars are:  " +
+            "User clicked time is: " + userClickNum + " " + 
+            "Played id are: " + playedID + 
+            "user clicked drums are: " + userSeq +
+            "Count is: " + count +
+            "j is: " + j
+        )
+        disableClick.classList.remove("show");
+        disableClick.classList.add("hide");
+
+        playedID = [];
+        userSeq = [];
+        j = 0;
+        userClickNum = -1;
+
+
+        setTimeout(() => {
+            failScreen.classList.add('fade-in');
+            failScreen.classList.remove('hide');
+            failScreen.classList.add('show');
+            buttonsFailEnable();
+        }, 500);
+    }
+
+    /*
     // Check if the length of the playedID and user clicked (userSeq) is the same.
     if(playedID.length === userSeq.length){
         // Check if playedID and user clicked ID are the same
@@ -348,11 +458,47 @@ function checking(){
         }
 
     }
+
+    */
 }
 
+// Enable the buttons on fail screen and do stuff
+function buttonsFailEnable(){
+    tryAgainbutton.addEventListener("click", function(){
+        tryAgain();
+    });
+
+    quitButton.addEventListener("click", function(){
+        location.reload();
+    })
+}
+
+function tryAgain(){
+    console.log("Inside of try again");
+    // Remove the fail screen
+    failScreen.classList.remove("show");
+    failScreen.classList.add("hide");
+
+    // reset all variables
+    userSeq = [];
+    simonSeq = [];
+    playedID = [];
+    on;
+    off;
+    j = 0;
+    count= 1;
+    userClickNum = -1;
+
+    for(var i = 0; i < 100; i++){
+        simonSeq[i] = Math.ceil((Math.random() * 6));
+    }
+
+    console.log(simonSeq);
+
+    startSequence();
 
 
-
+}
 
 // Animation functions when hovering the drums
 function sizeUp(x){
