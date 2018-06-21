@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sneakers</title>
+  </head>
+  <body>
+    <!-- Top banner above carousel -->
+    <div class="container text-center d-none d-lg-block top-banner">
+      <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-lg"></div>
+        <div class="col-lg-2 top-banner__item">
+          <svg class="d-inline ">
+            <use xlink:href="img/icons.svg#icon-truck"></use>
+          </svg>
+          <p class="d-inline text-nowrap">Hitra dostava 2-3 dni</p>
+        </div>
+        <div class="col-lg-3 top-banner__item">
+          <svg class="d-inline">
+            <use xlink:href="img/icons.svg#icon-spinner11"></use>
+          </svg>
+          <p class="d-inline text-nowrap">30 dnevni rok za menjavo ali plačilo</p>
+        </div>
+        <div class="col-lg-2 top-banner__item">
+          <svg class="d-inline text-nowrap">
+            <use xlink:href="img/icons.svg#icon-checkmark"></use>
+          </svg>
+          <p class="d-inline text-nowrap">vsi artikli na zalogi</p>
+        </div>
+        <div class="col-lg-3 top-banner__item">
+          <svg class="d-inline">
+            <use xlink:href="img/icons.svg#icon-envelop"></use>
+          </svg>
+          <p class=" d-inline text-nowrap">brezplačna dostava nad 100€</p>
+        </div>
+        <div class="col-lg"></div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg justify-content-between navbar-custom">
+        <a class="navbar-brand logo" href="#">
+        </a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Novosti <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Obutev</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Oblačila</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dodatki</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <svg class="d-inline text-nowrap">
+              <use xlink:href="img/icons.svg#icon-search"></use>
+            </svg>
+            <svg class="d-inline text-nowrap">
+              <use xlink:href="img/icons.svg#icon-cart"></use>
+            </svg>
+            <span>Prijava</span>
+          </span>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main carousel -->
+    <div class="container-fluid top-margin-1rem carousel-div">
+      <div id="carousel-sneakers" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-sneakers" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-sneakers" data-slide-to="1" ></li>
+          <li data-target="#carousel-sneakers" data-slide-to="2" ></li>
+          <li data-target="#carousel-sneakers" data-slide-to="3" ></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img src="img/item-1.jpg" class="d-block w-100" alt="First Slide">
+          </div>
+          <div class="carousel-item">
+            <img src="img/item-2.jpg" class="d-block w-100" alt="Second Slide">
+          </div>
+          <div class="carousel-item">
+            <img src="img/item-3.jpg" class="d-block w-100" alt="Third Slide">
+          </div>
+          <div class="carousel-item">
+            <img src="img/item-4.jpg" class="d-block w-100" alt="Fourth Slide">
+          </div>
+        </div>
+        <a href="#carousel-sneakers" role="button" data-slide="prev" class="carousel-control-prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a href="#carousel-sneakers" role="button" data-slide="next" class="carousel-control-next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Three column row with sneakers and hat -->
+    <div class="container-fluid top-margin-1rem" id="sneakers-first-row">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="item-row-of-three item h-100">
+            <div class="box h-100">
+              <img src="img/men-sneakers.jpg" alt="Man Sneakers photo">
+              <div class="main-title">
+                <p>Moški modeli</p>
+              </div>
+              <div class="sub-title">
+                <p>Nike</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" >
+          <div class="item-row-of-three item h-100">
+            <div class="box h-100">
+              <img src="img/women-sneakers.jpg" alt="Women Sneakers photo">
+              <div class="main-title">
+                <p>Ženski modeli</p>
+              </div>
+              <div class="sub-title">
+                <p>Nike</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" style="padding-right: .95rem;">
+          <div class="item-row-of-three item h-100">
+            <div class="box h-100">
+              <img src="img/era-hats.jpg" alt="Man Sneakers photo">
+              <div class="main-title">
+                <p>Kape</p>
+              </div>
+              <div class="sub-title">
+                <p>New Era</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- big section for adidas clothing -->
+    <div class="container-fluid" id="adidas-clothes">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="adidas-clothes">
+            <img src="img/full-width-img.jpg" alt="Adidas clothes">
+            <div class="main-title">
+              <p>Oblačila</p>
+            </div>
+            <div class="sub-title">
+              <p>Adidas Originals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second three column row for sneakers -->
+    <div class="container-fluid top-margin-1rem" id="sneakers-second-row">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="item-row-of-three item h-100">
+            <div class="box h-100">
+              <img src="img/converse-shoes.jpg" alt="Converse photo">
+              <div class="main-title">
+                <p>Novosti</p>
+              </div>
+              <div class="sub-title">
+                <p>Converse</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" >
+          <div class="item-row-of-three item h-100">
+            <div class="box h-100">
+              <img src="img/balance-shoes.jpg" alt="New balance photo">
+              <div class="main-title">
+                <p>Novosti</p>
+              </div>
+              <div class="sub-title">
+                <p>New balance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" style="padding-right: .95rem;">
+          <div class="item-row-of-three item h-100">
+            <div class="box h-100">
+              <img src="img/asics.jpg" alt="Asics photo">
+              <div class="main-title">
+                <p>Novosti</p>
+              </div>
+              <div class="sub-title">
+                <p>Asics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid d-none d-lg-block text-center" id="logo-row">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="box">
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="nike-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem"  xlink:href="img/logo-svgs/nike-3.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="adidas-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/adidas-4.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="NB-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/new-balance-2.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="asics-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem"  xlink:href="img/logo-svgs/asics-6.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg id="converse-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/converse-logo3.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="jordan-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/jordan-2.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="reebook-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/reebok-5.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg class="d-inline" id="timberland-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/timberland-1.svg" />
+              </svg>
+            </div>
+            <div class="col-lg-1 d-inline">
+              <svg id="newera-logo" width="3rem" height="3rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                <image x="0" y="0" width="3rem" height="3rem" xlink:href="img/logo-svgs/New_Era_logo.svg" />
+              </svg>
+            </div>
+            <div class="col-1-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video presentation title row -->
+    <div class="container-fluid" id="video-title-row">
+      <div class="row">
+        <div class="col-lg">
+          <h1>Video predstavitev</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video presentation row-->
+    <div class="container-fluid" id="video-row">
+      <div class="row">
+        <div class="col-lg-8 col-md-12 lg-pr-1" >
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0AJ28Eiwa0Q" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 lg-pl-0">
+          <div class="col-lg cold-md product-info">
+            <div class="box">
+              <p class="product-name">NIKE Epic REACT Flyknit</p>
+              <p>Moška modna in športna obutev Nike.</p>
+              <p class="product-price">139.99€</p>
+            </div>
+          </div>
+          <div class="col-lg product-image d-none d-lg-block">
+            <div class="box">
+              <img src="img/nike-sneaker.jpg" alt="">
+              <span>Poglej si izdelek</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- big picutre for men models -->
+    <div class="container-fluid text-center big-picture-models">
+      <div class="row">
+        <div class="col-lg">
+          <div class="box">
+            <h1>MOŠKI MODELI</h1>
+            <img src="img/more.jpg" alt="Click for more">
+          </div>
+          <div class="box-img">
+            <img src="img/men-models-big.jpg" alt="Big picture for men model shoes">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- big picture for women models -->
+    <div class="container-fluid text-center big-picture-models women-models">
+      <div class="row">
+        <div class="col-lg">
+          <div class="box">
+            <h1>ŽENSKI MODELI</h1>
+            <img src="img/more.jpg" alt="Click for more">
+          </div>
+          <div class="box-img">
+            <img src="img/wome-shoes-big.jpg" alt="Big picture for women model shoes">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yellow bar above social stuff -->
+    <div class="container-fluid yellow-bar-full">
+      <div class="row">
+        <div class="col-lg">
+          <div class="box">
+            <h1>Obišči nas v</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social links, store info and blog -->
+    <div class="container-fluid" id="stores-and-social">
+      <div class="row">
+        <div class="col-lg-4 store-info">
+          <div class="row">
+            <div class="col-lg-6">
+              <!-- carousel for stores -->
+              <div class="container">
+                <div id="carousel-stores" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-stores" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-stores" data-slide-to="1" ></li>
+                    <li data-target="#carousel-stores" data-slide-to="2" ></li>
+                  </ol>
+                  <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                      <img src="img/store1.jpg" class="d-block w-100" alt="First Slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/store2.jpg" class="d-block w-100" alt="Second Slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/store3.jpg" class="d-block w-100" alt="Third Slide">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pr-0">
+              <h1>Sneakers shop citypark</h1>
+              <p class="store-adress">Šmartinska 152G, Ljubljana 
+                Odprto še 6ur.
+              </p>
+              <span>Pondeljek - Petek: 9:00 - 21:00</span><br>
+              <span>Sobota: 8:00 - 21:00</span><br>
+              <span>Nedelja: 8:00 - 15:00</span><br>
+              <br>
+              <p class="store-phone">
+                <svg class="d-inline text-nowrap">
+                  <use xlink:href="img/icons.svg#icon-phone"></use>
+                </svg>
+                01/546 70 00
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 social-links">
+          <div class="box">
+            <div class="row">
+              <div class="col-lg-6">
+              </div>
+              <div class="col-lg-6 title-social ">
+                <h1>SLEDI NAM</h1>
+                <div class="social-links">
+                  <img src="img/fb-social.jpg" alt="Facebook">
+                  <img src="img/instagram-social.jpg" alt="Facebook">
+                  <img src="img/youtube-social.jpg" alt="Facebook">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 blog-link">
+          <div class="box">
+            <h1>SNEAKERS BLOG</h1>
+            <span>Kape new era</span>
+            <p>Poznate zgodbo o kapah New Era? Četudi so bolj priljubljene šele zadnja leta, njihovi začetki segajo skoraj stoletje daleč. Preberite več o kultnih kapah.</p>
+            <div class="button">
+              <a href="#">PREBERI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign up for newsletter row -->
+    <div class="container-fluid yellow-bar-full e-news">
+      <div class="row">
+        <div class="col-lg">
+          <div class="box">
+            <h1>Prijava na e-novice</h1>
+            <input class="d-none d-lg-block"type="text" placeholder="Tvoj email naslov">
+            <a href="#">Prijavi se</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container-fluid footer-info">
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2 col-md-4">
+          <h1 class="footer-info-buy-title">NAKUP</h1>
+          <a href="#">Moj profil</a><br>
+          <a href="#">Pomoč pri nakupu</a><br>
+          <a href="#">Svetovalec</a><br>
+          <a href="#">Menjave in reklamacije</a><br>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h1 class="footer-info-information">INFORMACIJE</h1>
+          <a href="#">Kontakt</a><br>
+          <a href="#">FB Sneakers Slovenija</a><br>
+          <a href="#">O podjetju</a><br>
+          <a href="#">O trgovini</a><br>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h1 class="footer-info-design">IMPRESSUM</h1>
+          <br>
+          <a href="#">Design: BE-EL</a><br>
+          <a href="#">Izvedba: Infobia</a><br>
+        </div>
+        <div class="col-lg-3"></div>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
