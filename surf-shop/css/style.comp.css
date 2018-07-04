@@ -50,12 +50,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.landing {
-  height: 30rem; }
-  .landing img {
-    z-index: -1;
-    position: absolute;
-    width: 100%; }
+.landing img {
+  z-index: -1;
+  position: absolute;
+  width: 100%; }
 
 .navbar {
   display: flex;
@@ -163,7 +161,8 @@ table {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d2ff', endColorstr='#ffffff',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
-  font-family: "Roboto", "sans-serif"; }
+  font-family: "Roboto", "sans-serif";
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   .itemShowcase__image {
     width: 35%;
     z-index: 100; }
@@ -234,3 +233,139 @@ table {
         padding: .4rem 1rem .4rem 1rem; }
     .itemShowcase__itemDescription--viewAll a {
       color: #00b0ff; }
+  .itemShowcase__rightButtons {
+    position: absolute;
+    z-index: 10000;
+    left: 95%; }
+    .itemShowcase__rightButtons--arrows {
+      background-color: #f2d800;
+      text-align: center;
+      width: 3.2rem;
+      padding: .8rem;
+      font-size: 1.2rem;
+      display: flex; }
+      .itemShowcase__rightButtons--arrows a {
+        color: #fff;
+        text-decoration: none; }
+      .itemShowcase__rightButtons--arrows-buffer {
+        margin: 0 auto;
+        width: .3rem; }
+    .itemShowcase__rightButtons--numbers {
+      position: relative;
+      right: 20%;
+      background-color: #111;
+      color: #fff;
+      padding: .8rem;
+      text-align: center; }
+
+.about {
+  width: 100%;
+  padding-top: 15rem;
+  padding-bottom: 20rem;
+  position: relative; }
+  .about__bgImg img {
+    width: 100%; }
+  .about__whiteBackground {
+    height: 30rem;
+    width: 45rem;
+    background-color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    display: flex; }
+    .about__whiteBackground--buffer {
+      width: 50%; }
+    .about__whiteBackground--text {
+      width: 50%;
+      text-align: center;
+      padding-top: 4rem;
+      padding-right: 4rem;
+      font-family: "Roboto", "sans-serif"; }
+      .about__whiteBackground--text h1 {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 700;
+        padding-bottom: .5rem; }
+      .about__whiteBackground--text i {
+        padding-bottom: 1rem; }
+      .about__whiteBackground--text p {
+        text-align: left;
+        padding-bottom: 1rem;
+        line-height: 2rem;
+        font-family: "Playfair Display", "sans-serif";
+        font-style: italic; }
+      .about__whiteBackground--text a {
+        color: #00b0ff;
+        float: left; }
+  .about__video img {
+    position: absolute;
+    left: 40%;
+    top: 70%;
+    z-index: 1000; }
+
+.reviews {
+  width: 80%;
+  position: relative;
+  left: 45%;
+  transform: translateX(-40%);
+  padding-top: 20rem;
+  padding-bottom: 10rem; }
+  .reviews__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: "Roboto", "sans-serif";
+    font-size: 2rem; }
+  .reviews__item {
+    width: 24%;
+    display: inline-block;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    cursor: pointer;
+    z-index: 9000;
+    transition: all .3s; }
+    .reviews__item:hover {
+      background-color: #00b0ff;
+      transform: scale(1.1);
+      z-index: 10000; }
+      .reviews__item:hover h1 {
+        color: #fff; }
+      .reviews__item:hover h2 {
+        color: #fff; }
+      .reviews__item:hover i {
+        color: #04577e; }
+      .reviews__item:hover--location i {
+        color: #fff; }
+      .reviews__item:hover--location p {
+        color: #fff; }
+    .reviews__item h1 {
+      color: #00b0ff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: .5rem; }
+    .reviews__item h2 {
+      color: #bfbfbf;
+      font-size: .9rem;
+      margin-top: .5rem; }
+    .reviews__item img {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      margin: 0 auto; }
+    .reviews__item i {
+      font-size: 2rem;
+      color: rgba(100, 100, 100, 0.527);
+      margin-bottom: .5rem; }
+    .reviews__item--location {
+      display: flex; }
+      .reviews__item--location i {
+        font-size: 1rem;
+        margin-right: .3rem; }
+      .reviews__item--location p {
+        color: rgba(100, 100, 100, 0.527);
+        font-size: .9rem; }
+      .reviews__item--location-buffer {
+        width: 24%; }
