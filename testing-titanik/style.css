@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Open Sans'; }
+
+.category_container {
+  display: block;
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center; }
+  .category_container .category_item {
+    display: inline-block;
+    width: 20%;
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    color: black; }
+    .category_container .category_item:hover {
+      background-color: black;
+      color: white; }
+
+.block_container {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box; }
+  .block_container .food_item {
+    box-sizing: border-box;
+    float: left;
+    padding: 4px;
+    width: 33%;
+    height: 20rem;
+    transition: all .4s ease-in-out; }
+
+.hide {
+  transform: scale(0);
+  transition: all .4s ease-in-out; }
+
+.remove {
+  display: none; }
