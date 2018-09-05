@@ -73,7 +73,7 @@ table {
     text-align: center;
     width: 17%;
     height: 7rem;
-    padding: 2rem;
+    padding: 1rem 0 2rem 0;
     background-color: #fff; }
   .navbar__right {
     display: flex;
