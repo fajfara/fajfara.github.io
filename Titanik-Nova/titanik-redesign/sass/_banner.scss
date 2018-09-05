@@ -1,0 +1,11 @@
+.main{
+    &__banner{
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        background-image: url('../img/banner-pizza.jpg');
+        background-size: cover;
+    }
+}
