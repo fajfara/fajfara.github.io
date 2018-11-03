@@ -284,6 +284,7 @@ $(document).ready(function() {
 
     window.addEventListener('scroll', () => {
         let pageLocation = window.location.pathname;
+        console.log(pageLocation);
         if(pageLocation.includes("index.html") || pageLocation == "https://fajfara.github.io/Titanik-Nova/"){
             let parent = document.getElementById('parallax-container');
             let children = parent.getElementsByTagName('div');
