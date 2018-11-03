@@ -283,7 +283,8 @@ $(document).ready(function() {
     //------- Parallax scroll --------//
 
     window.addEventListener('scroll', () => {
-        if(window.location.pathname === '/index.html'){
+        let pageLocation = window.location.pathname;
+        if(pageLocation.includes("index.html")){
             let parent = document.getElementById('parallax-container');
             let children = parent.getElementsByTagName('div');
             let aboutPage = document.getElementById('about-area');

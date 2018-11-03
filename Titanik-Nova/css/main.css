@@ -2143,7 +2143,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .about-banner {
   background-color: #000000;
-  background-image: url(../../img/wood-texture.jpg);
+  background-image: url(../img/wood-texture.jpg);
   background-size: cover;
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
   .about-banner .overlay-bg {
@@ -2512,7 +2512,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* =================================== */
 .footer-area {
   background-color: #000000;
-  background-image: url(../../img/wood-texture.jpg);
+  background-image: url(../img/wood-texture.jpg);
   background-size: cover; }
   .footer-area h4 {
     padding-bottom: 30px; }
