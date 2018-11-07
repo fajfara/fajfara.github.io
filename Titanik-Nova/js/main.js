@@ -113,7 +113,6 @@ $(document).ready(function() {
 
       $('.filters li').click(function(){
         let pageLocation = window.location.pathname;
-        console.log(pageLocation);
         if(pageLocation.includes("/menu.html")){
             $('.filters li').removeClass('active-menu-filter');
             $(this).addClass('active-menu-filter');
