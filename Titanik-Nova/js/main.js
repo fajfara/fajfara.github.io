@@ -167,7 +167,6 @@ $(document).ready(function() {
     //------- Header Scroll Class  js --------//  
 
     $(window).scroll(function() {
-        console.log($(this).scrollTop());
         if($(this).scrollTop() > 100) {
             $('#header').addClass('header-scrolled');
             setTimeout(() => {
@@ -194,7 +193,6 @@ $(document).ready(function() {
 
     window.addEventListener('scroll', () => {
         let pageLocation = window.location.pathname;
-        console.log(pagelocation);
         if(pageLocation.includes("index.html") || pageLocation == '/' || pageLocation == '/Titanik-Nova/'){
             let parent = document.getElementById('parallax-container');
             let children = parent.getElementsByTagName('div');

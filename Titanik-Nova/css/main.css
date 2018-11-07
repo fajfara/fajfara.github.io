@@ -674,6 +674,9 @@ td, th {
         margin-top: .2rem;
         width: 13rem; }
 
+.main-menu-mobile {
+  padding-bottom: 1rem; }
+
 @media (max-width: 768px) {
   #mobilenav-burger-btn {
     border-top: 2px solid #2A5B84;
@@ -682,23 +685,19 @@ td, th {
     box-sizing: border-box;
     position: relative;
     z-index: 9999;
-    left: 111%;
-    margin-top: 0rem;
+    float: left;
+    margin-right: -5rem;
     cursor: pointer;
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
     -khtml-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in; } }
-  @media (max-width: 768px) and (max-width: 700px) {
+  @media only screen and (max-width: 768px) and (max-width: 600px) {
     #mobilenav-burger-btn {
-      left: 105%; } }
-  @media (max-width: 768px) and (max-width: 600px) {
-    #mobilenav-burger-btn {
-      left: 97%; } }
-  @media (max-width: 768px) and (max-width: 550px) {
-    #mobilenav-burger-btn {
-      left: 93%; } }
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%); } }
 
 @media (max-width: 768px) {
     #mobilenav-burger-btn:before {
@@ -732,12 +731,15 @@ td, th {
 
 #mobile-nav-content {
   position: absolute;
+  top: -500%;
+  left: 25%;
   z-index: 100000;
   list-style-type: none;
-  margin: 100px 0 0 20px;
+  margin: 150px 0 0 20px;
   padding: 0;
   height: 100%;
-  visibility: hidden; }
+  visibility: hidden;
+  transition: all .2s; }
   #mobile-nav-content li a {
     color: black; }
 
@@ -757,6 +759,9 @@ td, th {
   -khtml-transition: all 0.4s ease-in;
   -o-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in; }
+  @media only screen and (max-width: 600px) {
+    #mobileBodyContent {
+      overflow: hidden; } }
 
 .navigation #mobile-nav-content li {
   width: 10rem;
@@ -1712,16 +1717,13 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-.header-top {
-  padding: 20px 0px; }
-
 .top-head-btn {
   background: #EBC137;
   padding: 9px 26px; }
 
 .main-menu {
-  padding-bottom: 40px;
-  padding-top: 40px;
+  padding-bottom: 70px;
+  padding-top: 60px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-left: 15px;
@@ -1736,6 +1738,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: ease-in 1s;
   z-index: 10000;
   background-color: #f9f9ff; }
+  @media only screen and (max-width: 600px) {
+    #header {
+      top: initial;
+      bottom: 0; } }
 
 #header.header-scrolled {
   transition: all 0.5s;
@@ -1746,13 +1752,21 @@ h1, h2, h3, h4, h5, h6 {
     transition: visibility 0s .2s, opacity .2s ease-out; }
   #header.header-scrolled .main-menu {
     background: transparent;
-    border: none;
-    margin-top: -2rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem; }
+    border: none; }
 
 .remove {
   display: none; }
+
+.header-top {
+  padding: 20px 0px; }
+  @media only screen and (max-width: 600px) {
+    .header-top {
+      position: fixed;
+      background-color: white;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0%; } }
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -1967,6 +1981,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10;
   top: 12rem;
   left: 13rem; }
+  @media only screen and (max-width: 600px) {
+    .parallax-container-layer-2 {
+      top: 15rem;
+      left: 3rem; } }
   .parallax-container-layer-2 h6 {
     text-transform: uppercase;
     font-weight: 300;
@@ -1988,6 +2006,9 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 3px;
     padding: .5rem;
     background-color: #222; }
+    @media only screen and (max-width: 600px) {
+      .parallax-container-layer-2 p {
+        font-size: .6rem; } }
   .parallax-container-layer-2 .primary-btn {
     position: relative;
     z-index: 110; }
@@ -2089,6 +2110,9 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: 414px) {
     .menu-area .filters li {
       max-width: 100% !important; } }
+  @media only screen and (max-width: 600px) {
+    .menu-area .filters li {
+      font-size: 16px; } }
   .menu-area .filters li:last-child {
     border-right: none; }
 
@@ -2451,7 +2475,7 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: 767px) {
     .food-menu .filters li {
       padding: 12px 0px;
-      font-size: 10px; } }
+      font-size: 30px; } }
   @media (max-width: 414px) {
     .food-menu .filters li {
       max-width: 100% !important; } }
