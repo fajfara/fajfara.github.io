@@ -194,6 +194,7 @@ $(document).ready(function() {
 
     window.addEventListener('scroll', () => {
         let pageLocation = window.location.pathname;
+        console.log(pagelocation);
         if(pageLocation.includes("index.html") || pageLocation == '/' || pageLocation == '/Titanik-Nova/'){
             let parent = document.getElementById('parallax-container');
             let children = parent.getElementsByTagName('div');
