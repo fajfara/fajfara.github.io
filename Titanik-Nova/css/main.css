@@ -2251,7 +2251,33 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   height: 90rem;
   background-image: url(../img/wood-texture.jpg);
-  background-size: cover; }
+  background-size: cover;
+  background-attachment: fixed; }
+  .banner-top-menu .container-fluid {
+    position: absolute;
+    bottom: 16%; }
+    .banner-top-menu .container-fluid h1 {
+      color: #f9f9ff; }
+    .banner-top-menu .container-fluid .inline-banner-links {
+      margin-top: 1rem; }
+      .banner-top-menu .container-fluid .inline-banner-links a {
+        font-size: 1rem;
+        color: #f9f9ff; }
+      .banner-top-menu .container-fluid .inline-banner-links i {
+        margin: 0 .8rem 0 .8rem;
+        color: #f9f9ff; }
+    .banner-top-menu .container-fluid .content {
+      margin-top: -53rem; }
+      .banner-top-menu .container-fluid .content h1 {
+        color: #f9f9ff; }
+      .banner-top-menu .container-fluid .content .inline-banner-links {
+        margin-top: 1rem; }
+        .banner-top-menu .container-fluid .content .inline-banner-links a {
+          font-size: 1rem;
+          color: #f9f9ff; }
+        .banner-top-menu .container-fluid .content .inline-banner-links i {
+          margin: 0 .8rem 0 .8rem;
+          color: #f9f9ff; }
 
 /*-------- End Common Page Style   -------------*/
 /* =================================== */

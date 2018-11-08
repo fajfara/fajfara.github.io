@@ -222,10 +222,10 @@ $(document).ready(function() {
 
 function initMap(){
     var options = {
-        zoom: 8,
+        zoom: 18,
         center: {
             lat: 46.256545, 
-            lng: -14.382235
+            lng: 14.382235
         }
     }
 
