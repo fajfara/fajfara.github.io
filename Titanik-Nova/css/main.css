@@ -680,13 +680,11 @@ td, th {
 @media (max-width: 768px) {
   #mobilenav-burger-btn {
     border-top: 2px solid #2A5B84;
+    position: relative;
     height: 25px;
     width: 30px;
     box-sizing: border-box;
-    position: relative;
     z-index: 9999;
-    float: left;
-    margin-right: -5rem;
     cursor: pointer;
     -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
@@ -695,9 +693,11 @@ td, th {
     transition: all 0.3s ease-in; } }
   @media only screen and (max-width: 768px) and (max-width: 600px) {
     #mobilenav-burger-btn {
-      position: fixed;
       left: 50%;
       transform: translateX(-50%); } }
+  @media only screen and (max-width: 768px) and (min-width: 601px) {
+    #mobilenav-burger-btn {
+      float: right; } }
 
 @media (max-width: 768px) {
     #mobilenav-burger-btn:before {
@@ -735,11 +735,15 @@ td, th {
   left: 25%;
   z-index: 100000;
   list-style-type: none;
-  margin: 150px 0 0 20px;
+  margin: 50px 0 0 20px;
   padding: 0;
   height: 100%;
   visibility: hidden;
   transition: all .2s; }
+  @media screen and (min-width: 601px) {
+    #mobile-nav-content {
+      top: initial;
+      margin: 150px 0 0 -20px; } }
   #mobile-nav-content li a {
     color: black; }
 
@@ -1724,11 +1728,14 @@ h1, h2, h3, h4, h5, h6 {
 .main-menu {
   padding-bottom: 70px;
   padding-top: 60px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-left: 15px;
-  padding-right: 15px;
   margin-top: -2.5rem; }
+  @media only screen and (max-width: 600px) {
+    .main-menu {
+      padding-bottom: 30px;
+      padding-top: 50px; } }
+  @media only screen and (min-width: 610px) {
+    .main-menu {
+      padding-bottom: 60px; } }
 
 #header {
   position: fixed;
@@ -1737,7 +1744,10 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   transition: ease-in 1s;
   z-index: 10000;
-  background-color: #f9f9ff; }
+  background-color: #f9f9ff;
+  -webkit-box-shadow: 0px 20px 80px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 0px 20px 80px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 20px 80px rgba(50, 50, 50, 0.75); }
   @media only screen and (max-width: 600px) {
     #header {
       top: initial;
@@ -1767,6 +1777,9 @@ h1, h2, h3, h4, h5, h6 {
       left: 50%;
       transform: translateX(-50%);
       top: 0%; } }
+
+#logo {
+  margin: 0 auto; }
 
 /*--------------------------------------------------------------
 # Navigation Menu
