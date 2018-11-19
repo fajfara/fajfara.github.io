@@ -1,23 +1,7 @@
 $(document).ready(function() {
     "use strict";
-
-
-    var window_width = $(window).width(),
-        window_height = window.innerHeight,
-        header_height = $(".default-header").height(),
-        header_height_static = $(".site-header.static").outerHeight(),
-        fitscreen = window_height - header_height;
-
-    $(".fullscreen").css("height", window_height)
-    $(".fitscreen").css("height", fitscreen);
-
-
-    // ------- Datepicker  js --------//  
-
-      $( function() {
-        $( ".date-picker" ).datepicker();
-      } );
-
+    let parent = document.getElementById('parallax-container');
+    let children = parent.getElementsByTagName('img');
 
     //------- Niceselect  js --------//  
 
@@ -31,71 +15,46 @@ $(document).ready(function() {
         $('select').niceSelect();
     };    
 
-    //------- Lightbox  js --------//  
-
-    $('.img-gal').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-
-    $('.play-btn').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
-
-    //------- Superfish nav menu  js --------//  
-
-    $('.nav-menu').superfish({
-        animation: {
-            opacity: 'show'
-        },
-        speed: 400
-    });
 
 
     //------- Filter  js --------//  
     
 
-    var d = new Date();
+    let d = new Date();
     d = d.getDay();
     console.log(d);
     if(d == 1){
         $('#ponedeljek').addClass('active');
 
-        var data = $('#ponedeljek').attr('data-filter');
+        let data = $('#ponedeljek').attr('data-filter');
         $('.grid').isotope({
           filter: data
         })
     } else if (d == 2){
         $('#torek').addClass('active');
 
-        var data = $('#torek').attr('data-filter');
+        let data = $('#torek').attr('data-filter');
         $('.grid').isotope({
           filter: data
         })
     } else if (d == 3){
         $('#sreda').addClass('active');
 
-        var data = $('#sreda').attr('data-filter');
+        let data = $('#sreda').attr('data-filter');
         $('.grid').isotope({
           filter: data
         })
     } else if (d == 4){
         $('#cetrtek').addClass('active');
 
-        var data = $('#cetrtek').attr('data-filter');
+        let data = $('#cetrtek').attr('data-filter');
         $('.grid').isotope({
           filter: data
         })
     }  else if (d == 5){
         $('#petek').addClass('active');
 
-        var data = $('#cetrtek').attr('data-filter');
+        let data = $('#cetrtek').attr('data-filter');
         $('.grid').isotope({
           filter: data
         })
@@ -105,7 +64,7 @@ $(document).ready(function() {
         $('.filters li').removeClass('active');
         $(this).addClass('active');
         
-        var data = $(this).attr('data-filter');
+        let data = $(this).attr('data-filter');
         $('.grid').isotope({
           filter: data
         })
@@ -118,7 +77,7 @@ $(document).ready(function() {
             $('.filters li').removeClass('active-menu-filter');
             $(this).addClass('active-menu-filter');
             
-            var data = $(this).attr('data-filter');
+            let data = $(this).attr('data-filter');
             $('.grid').isotope({
             filter: data
             });
@@ -128,7 +87,7 @@ $(document).ready(function() {
 
 
       if(document.getElementById("food") || document.getElementById("gallery")){
-            var $grid = $(".grid").isotope({
+            let $grid = $(".grid").isotope({
               itemSelector: ".all",
               percentPosition: true,
               masonry: {
@@ -138,17 +97,7 @@ $(document).ready(function() {
             })
       };
 
-    //------- Owl Carusel  js --------//  
 
-    $('.-review-carusel').owlCarousel({
-        items:1,
-        loop:true,
-        autoplay:true,
-        autoplayHoverPause: true,        
-        smartSpeed:500,          
-        margin:30,
-        dots: true
-    });
     //------- Mobile nav functionality -------//
     let burgerBtn = document.getElementById('mobilenav-burger-btn');
     let mobile = document.getElementsByTagName("BODY")[0];
@@ -189,30 +138,26 @@ $(document).ready(function() {
     });
 
 
-    //------- Parallax scroll --------//
-
+    //------- Parallax banner --------//
     window.addEventListener('scroll', () => {
-        let pageLocation = window.location.pathname;
-        if(pageLocation.includes("index.html") || pageLocation == '/' || pageLocation == '/Titanik-Nova/'){
-            let parent = document.getElementById('parallax-container');
-            let children = parent.getElementsByTagName('div');
-            let aboutPage = document.getElementById('about-area');
-                for(let i = 0; i < children.length; i++) {
-                    children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
-                }
-                aboutPage.style.transform = 'translateY(-' + (window.pageYOffset * .9) + 'px)';
+        // Parallax scroll settings
+        for(let i = 0; i < children.length; i++) {
+            // settings for dark-bg
+            if(children[i].className === 'layer-0'){
+                continue;
+            }
+            // settings for pizza
+            if(children[i].className === 'layer-1'){
+                children[i].style.transform = 'translateY(' + (window.pageYOffset / children.length * .5 + 'px');
+            }
+            // settings for leafs
+            if(children[i].className === 'layer-2'){
+                children[i].style.transform = 'translateY(-' + (window.pageYOffset * .5 / children.length + 'px');
+            }
         }
-    }, false)
-
     
-
     
-
-    //------- Mailchimp js --------//  
-
-    $(document).ready(function() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
-    });
+    }, false);
 
 });
 
@@ -221,7 +166,7 @@ $(document).ready(function() {
 //------- Google Map  js --------//  
 
 function initMap(){
-    var options = {
+    let options = {
         zoom: 18,
         center: {
             lat: 46.256545, 

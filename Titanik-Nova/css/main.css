@@ -693,7 +693,7 @@ td, th {
     -khtml-transition: all 0.3s ease-in;
     -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in; } }
-  @media only screen and (max-width: 768px) and (max-width: 600px) {
+  @media only screen and (max-width: 768px) and (max-width: 768px) {
     #mobilenav-burger-btn {
       position: fixed;
       left: 50%;
@@ -1738,7 +1738,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: ease-in 1s;
   z-index: 10000;
   background-color: #f9f9ff; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     #header {
       top: initial;
       bottom: 0; } }
@@ -1759,7 +1759,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-top {
   padding: 20px 0px; }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     .header-top {
       position: fixed;
       background-color: white;
@@ -1949,146 +1949,122 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px; }
 
 /*-------- Start Banner Area ------------*/
-#parallax-container {
-  display: block;
-  height: 900px;
+.parallax-scroll-banner {
   position: relative;
+  height: 50rem;
+  padding-left: 0;
+  padding-right: 0;
   overflow: hidden; }
+  @media (min-width: 2000px) {
+    .parallax-scroll-banner {
+      height: 70rem; } }
+  .parallax-scroll-banner #parallax-container {
+    width: 100%;
+    height: 100%; }
+  .parallax-scroll-banner .layer-0 {
+    position: absolute;
+    top: 0;
+    z-index: 1; }
+  .parallax-scroll-banner .layer-1 {
+    position: absolute;
+    left: 10rem;
+    top: 0rem;
+    z-index: 3; }
+  .parallax-scroll-banner .layer-2 {
+    position: absolute;
+    z-index: 5; }
+  .parallax-scroll-banner .layer-3 {
+    position: absolute;
+    z-index: 7; }
+  .parallax-scroll-banner .layer-4 {
+    position: absolute;
+    z-index: 9; }
+  .parallax-scroll-banner .layer-5 {
+    position: absolute;
+    z-index: 10; }
+  .parallax-scroll-banner .layer-6 {
+    position: absolute;
+    z-index: 4; }
 
-.parallax-container-layer-1, .parallax-container-layer-3 {
-  height: 900px;
-  width: 100%;
-  position: absolute; }
-  .parallax-container-layer-1 img, .parallax-container-layer-3 img {
-    position: absolute; }
-
-.parallax-container-layer-1 {
-  z-index: 1;
-  background: url(../img/bg-hero/restaurant-690569.jpg);
-  background-size: cover; }
-
-.parallax-container-layer-3 {
-  top: 3rem;
-  z-index: 10; }
-  .parallax-container-layer-3 img {
-    width: 100%; }
-  @media (max-width: 1300px) {
-    .parallax-container-layer-3 {
-      top: 12rem; } }
-  @media (min-width: 1500px) {
-    .parallax-container-layer-3 {
-      top: -2rem; } }
-  @media (min-width: 1680px) {
-    .parallax-container-layer-3 {
-      top: -5rem; } }
-  @media (max-width: 1000px) {
-    .parallax-container-layer-3 {
-      visibility: hidden; } }
-
-.parallax-container-layer-4 {
-  width: 35rem;
-  position: absolute;
-  top: 16rem;
-  left: 55%;
-  z-index: 20; }
-  @media (max-width: 1500px) {
-    .parallax-container-layer-4 {
-      left: 45%;
-      width: 40rem;
-      top: 10rem;
-      z-index: 50; } }
-  @media (max-width: 1499px) {
-    .parallax-container-layer-4 {
-      width: 40rem;
-      top: 15rem; } }
-  @media (max-width: 1000px) {
-    .parallax-container-layer-4 {
-      visibility: hidden; } }
-  .parallax-container-layer-4 img {
-    width: 100%; }
-
-.parallax-container-layer-5 {
-  width: 35rem;
-  position: absolute;
-  top: 42rem;
-  left: 10%;
-  z-index: 40; }
-  @media (max-width: 1500px) {
-    .parallax-container-layer-5 {
-      left: 5%;
-      top: 43rem;
-      width: 40rem; } }
-  @media (max-width: 1000px) {
-    .parallax-container-layer-5 {
-      visibility: hidden; } }
-  .parallax-container-layer-5 img {
-    width: 100%; }
-
-.parallax-container-layer-2 {
-  display: block;
-  position: relative;
-  z-index: 30;
-  top: 12rem;
-  left: 20rem;
-  width: 40rem;
-  margin: 0; }
-  @media (max-width: 1500px) {
-    .parallax-container-layer-2 {
-      left: 20rem; } }
-  @media (max-width: 1000px) {
-    .parallax-container-layer-2 {
-      top: 20rem;
-      left: 13rem; } }
-  @media (max-width: 730px) {
-    .parallax-container-layer-2 {
-      top: 10rem;
-      left: 5rem; } }
-  @media (max-width: 600px) {
-    .parallax-container-layer-2 {
-      top: 8rem;
-      left: 2rem; } }
-  @media (max-width: 400px) {
-    .parallax-container-layer-2 {
-      top: 6rem; } }
-  .parallax-container-layer-2 h6 {
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px #222; }
-  .parallax-container-layer-2 h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-shadow: 2px 2px #222;
-    width: 20rem; }
-    @media (max-width: 767px) {
-      .parallax-container-layer-2 h1 {
-        font-size: 2rem; } }
-  .parallax-container-layer-2 p {
-    max-width: 35rem;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px #222;
-    font-size: .9rem;
-    letter-spacing: 3px;
-    line-height: 30px;
-    padding: 1.5rem;
-    background-color: #222; }
-    @media (max-width: 600px) {
-      .parallax-container-layer-2 p {
-        font-size: 1rem;
-        max-width: 33rem; } }
-    @media (max-width: 500px) {
-      .parallax-container-layer-2 p {
-        max-width: 30rem; } }
-    @media (max-width: 400px) {
-      .parallax-container-layer-2 p {
-        max-width: 20rem; } }
-  .parallax-container-layer-2 .primary-btn {
+/*
+.parallax-container-layer-2{
+    display: block;
     position: relative;
-    z-index: 2000; }
-    .parallax-container-layer-2 .primary-btn:hover {
-      background: #222;
-      color: #FEFAE1; }
+    z-index: 30;
+    top: 12rem;
+    left: 20rem;
+    width: 40rem;
+    margin: 0;
+    @media (max-width: 1500px){
+        left: 20rem;
+    }
+    @media (max-width: 1000px){
+        top: 20rem;
+        left: 13rem;  
+    }
 
+    @media (max-width: 730px){
+        top: 10rem;
+        left: 5rem;  
+    }
+
+    @media (max-width: 600px){
+        top: 8rem;
+        left: 2rem;  
+    }
+
+    @media (max-width: 400px){
+        top: 6rem;
+    }
+
+    
+    
+    h6{
+        text-transform:uppercase;
+        font-weight:300;
+        letter-spacing:2px;
+        text-shadow: 2px 2px $black;
+    }
+    h1{
+        font-size: 3rem;
+        font-weight:700;
+        text-shadow: 2px 2px $black;
+        width: 20rem;
+        @media(max-width:767px){
+            font-size:2rem;
+        }
+    }
+    p{
+        max-width:35rem;
+        margin-bottom:30px;
+        text-shadow: 2px 2px $black;
+        font-size: .9rem;
+        @media (max-width: 600px){
+            font-size: 1rem;
+            max-width: 33rem;
+        }
+        @media (max-width: 500px){
+            max-width: 30rem;
+        }
+        @media (max-width: 400px){
+            max-width: 20rem;
+        }
+        letter-spacing: 3px;
+        line-height: 30px;
+        padding: 1.5rem;
+        background-color: $black;
+    }
+    .primary-btn{
+        position: relative;
+        z-index: 2000;
+        &:hover{
+            background:$black;
+            color:$white;
+        }
+    }
+    
+}
+*/
 .banner-area {
   margin-top: 10rem;
   z-index: -1;
@@ -2132,8 +2108,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 50px; } }
 
 /*-------- End home-about Area ------------*/
-/*--------- Start weekly menu area -------------*/
-/*--------- End weekly menu area -------------*/
 /*-------- Start Menu Area ------------*/
 .menu-area {
   background: #f9f9ff;
@@ -2246,39 +2220,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /*-------- End Menu Area ------------*/
 /*--------- start review carusel Area -------------*/
-.review-area {
-  background: url(../img/review-bg.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  margin-top: -5rem; }
-  .review-area .owl-carousel .owl-item img {
-    width: auto !important; }
-  .review-area .owl-dots {
-    text-align: center;
-    bottom: 5px;
-    margin-top: 50px;
-    width: 100%;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden; }
-  .review-area .owl-dot {
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    background: rgba(235, 193, 55, 0.2);
-    margin-left: 5px;
-    margin-right: 5px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s; }
-  .review-area .owl-dot.active {
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    background: #EBC137; }
-
 .single-review {
   text-align: center; }
   .single-review img {
@@ -2365,7 +2306,7 @@ h1, h2, h3, h4, h5, h6 {
 /* =================================== */
 /*-------- start services Style  -------------*/
 .buffer-about-page {
-  height: 350px; }
+  height: 3150px; }
 
 .services-area {
   position: relative;
@@ -2630,7 +2571,16 @@ h1, h2, h3, h4, h5, h6 {
   .food-menu .filters-content .col-sm-12, .food-menu .filters-content .col-xl-6 {
     background-color: #f9f9ff; }
   .food-menu .filters-content .box .menu-image {
-    height: 340px; }
+    height: 340px;
+    padding: 0;
+    position: relative;
+    overflow: hidden; }
+    .food-menu .filters-content .box .menu-image img {
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      object-fit: cover; }
   .food-menu .filters-content .box .menu-description {
     height: 340px;
     padding: 0px;
@@ -2669,6 +2619,16 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem; }
         .food-menu .filters-content .box .menu-description-content p span {
           font-size: .8rem; }
+      .food-menu .filters-content .box .menu-description-content .cena {
+        padding-top: 1.3rem; }
+        .food-menu .filters-content .box .menu-description-content .cena span {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #2A5B84; }
+        .food-menu .filters-content .box .menu-description-content .cena p {
+          font-size: 1.5rem;
+          font-weight: 300;
+          color: #2A5B84; }
 
 /*-------- End Menu Area ------------*/
 /* =================================== */
