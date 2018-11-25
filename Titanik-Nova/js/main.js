@@ -177,11 +177,6 @@ $(document).ready(function() {
                 if(children[i].className === 'layer-0'){
                     continue;
                 }
-                // settings for delivery-circle
-                if(children[i].className === 'layer-1'){
-                    children[i].style.transform = 'translateY(-' + (window.pageYOffset * 2 / children.length  + 'px');
-                    
-                }
                 // settings for pizza
                 if(children[i].className === 'layer-2'){
                     children[i].style.transform = 'translateY(-' + (window.pageYOffset * 2 / children.length + 'px');
