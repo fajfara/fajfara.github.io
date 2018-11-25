@@ -2,6 +2,12 @@ $(document).ready(function() {
     "use strict";
     let parent = document.getElementById('parallax-container');
     let children = parent.getElementsByTagName('img');
+    let aboutPage = document.getElementById('about-area');
+    let infoBar = document.getElementById('full-bar-info');
+
+    if (window.innerWidth < 768){
+        infoBar.classList.add("hide");
+    };
 
     //------- Niceselect  js --------//  
 
@@ -99,14 +105,25 @@ $(document).ready(function() {
 
 
     //------- Mobile nav functionality -------//
-    let burgerBtn = document.getElementById('mobilenav-burger-btn');
+    let burgerBtn = document.getElementById("mobilenav-burger-btn");
     let mobile = document.getElementsByTagName("BODY")[0];
     let burgerBtnPressed = false;
-    burgerBtn.addEventListener('click', function() {
-        mobile.classList.toggle('navigation');
+    burgerBtn.addEventListener(
+    "click",
+    function() {
+        mobile.classList.toggle("navigation");
         burgerBtnPressed = !burgerBtnPressed;
         console.log(burgerBtnPressed);
-    }, false);
+    },
+    false
+    );
+
+    // remove navigation class when over 768px if resizing
+    window.addEventListener('resize', () => {
+    if(window.innerWidth > 768){
+        mobile.classList.remove("navigation");
+    }
+    });
     
 
     
@@ -135,6 +152,19 @@ $(document).ready(function() {
             $('.header-top').removeClass('remove');
         }
 
+        if (window.innerWidth < 768){
+            infoBar.classList.add("hide");
+            console.log("Debugging 1" + window.pageYOffset);
+            if(window.pageYOffset > 100){
+                console.log("Debugging 2");
+                infoBar.classList.remove("hide");
+                infoBar.classList.add("show");
+            } else {
+                infoBar.classList.remove("show");
+                infoBar.classList.add("hide");
+            };
+        };
+
     });
 
 
@@ -142,22 +172,39 @@ $(document).ready(function() {
     window.addEventListener('scroll', () => {
         // Parallax scroll settings
         for(let i = 0; i < children.length; i++) {
-            // settings for dark-bg
-            if(children[i].className === 'layer-0'){
+            if(window.innerWidth > 568){
+                // settings for bg
+                if(children[i].className === 'layer-0'){
+                    continue;
+                }
+                // settings for delivery-circle
+                if(children[i].className === 'layer-1'){
+                    children[i].style.transform = 'translateY(-' + (window.pageYOffset * 2 / children.length  + 'px');
+                    
+                }
+                // settings for pizza
+                if(children[i].className === 'layer-2'){
+                    children[i].style.transform = 'translateY(-' + (window.pageYOffset * 2 / children.length + 'px');
+                    children[i].style.transform = 'rotate(-' + (window.pageYOffset / children.length / 10  + 'deg');
+                }
+                if(window.innerWidth > 600){
+                    aboutPage.style.transform = 'translateY(-' + (window.pageYOffset * 2 / children.length / 2+ 'px');
+                }
+                
+            } else {
                 continue;
             }
-            // settings for pizza
-            if(children[i].className === 'layer-1'){
-                children[i].style.transform = 'translateY(' + (window.pageYOffset / children.length * .5 + 'px');
-            }
-            // settings for leafs
-            if(children[i].className === 'layer-2'){
-                children[i].style.transform = 'translateY(-' + (window.pageYOffset * .5 / children.length + 'px');
-            }
         }
-    
+        
+        
+
+        
     
     }, false);
+
+    //--- Scroll reveal ---//
+    ScrollReveal().reveal('.about-scroll-data');
+    
 
 });
 
